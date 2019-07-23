@@ -10,10 +10,14 @@ import Cocoa
 
 class ViewController: NSViewController {
 
+    @IBOutlet weak var textfieldUUID: NSTextField!
+    @IBOutlet weak var buttonGenerate: NSButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        setNewUUID()
     }
 
     override var representedObject: Any? {
@@ -22,6 +26,13 @@ class ViewController: NSViewController {
         }
     }
 
-
+    @IBAction func onClickGenerate(_ sender: Any) {
+        setNewUUID()
+    }
+    
+    func setNewUUID() {
+        textfieldUUID.stringValue = UUID().uuidString
+    }
+    
 }
 
